@@ -1,7 +1,10 @@
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -15,7 +18,8 @@ define("common", ["require", "exports"], function (require, exports) {
 define("World", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var World = (function () {
+    exports.World = void 0;
+    var World = /** @class */ (function () {
         function World(ctx, fps) {
             this.c = ctx;
             this.fps = fps;
@@ -53,7 +57,8 @@ define("World", ["require", "exports"], function (require, exports) {
 define("EventReceiver", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var EventReceiver = (function () {
+    exports.EventReceiver = void 0;
+    var EventReceiver = /** @class */ (function () {
         function EventReceiver() {
             this.events = [];
         }
@@ -73,7 +78,8 @@ define("EventReceiver", ["require", "exports"], function (require, exports) {
 define("StaticEntity", ["require", "exports", "EventReceiver"], function (require, exports, EventReceiver_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var StaticEntity = (function (_super) {
+    exports.StaticEntity = void 0;
+    var StaticEntity = /** @class */ (function (_super) {
         __extends(StaticEntity, _super);
         function StaticEntity(x, y) {
             var _this = _super.call(this) || this;
@@ -91,7 +97,8 @@ define("StaticEntity", ["require", "exports", "EventReceiver"], function (requir
 define("Entity", ["require", "exports", "StaticEntity"], function (require, exports, StaticEntity_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var Entity = (function (_super) {
+    exports.Entity = void 0;
+    var Entity = /** @class */ (function (_super) {
         __extends(Entity, _super);
         function Entity() {
             return _super !== null && _super.apply(this, arguments) || this;
@@ -104,7 +111,8 @@ define("Entity", ["require", "exports", "StaticEntity"], function (require, expo
 define("Player", ["require", "exports", "Entity"], function (require, exports, Entity_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var Player = (function (_super) {
+    exports.Player = void 0;
+    var Player = /** @class */ (function (_super) {
         __extends(Player, _super);
         function Player(img, x, y, speed) {
             var _this = _super.call(this, x, y) || this;
@@ -143,7 +151,8 @@ define("Player", ["require", "exports", "Entity"], function (require, exports, E
 define("ImageManager", ["require", "exports"], function (require, exports) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    var ImageManager = (function () {
+    exports.ImageManager = void 0;
+    var ImageManager = /** @class */ (function () {
         function ImageManager(urls) {
             if (urls === undefined) {
                 this.urls = {};
